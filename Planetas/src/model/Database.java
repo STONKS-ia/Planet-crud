@@ -24,7 +24,7 @@ public class Database {
 		}
 	}
 
-	public static List<Planetas> getUsuarios() {
+	public static List<Planetas> getPlanetas() {
 		return lista;
 	}
 
