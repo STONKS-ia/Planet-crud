@@ -16,9 +16,9 @@ body {
 }
 
 :root {
-  --colorBg: rgba(255, 255, 255, 0.1);
+  --colorBg: rgba(255, 255, 255, .1);
   --colorBorder: rgba(255, 255, 255, 0.2);
-  --colorBg1: #312c34;
+  --colorBg1: #312C34;
 }
 
 @mixin flex($direction, $justify, $align) {
@@ -38,11 +38,10 @@ body {
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
-  overflow-y: visible;
+  overflow-y: auto;
   @include flex(column, center, center);
 
   .item {
-    margin: 5px;
     border-radius: 10px;
     background: var(--colorBg1);
     width: 80%;
@@ -50,7 +49,7 @@ body {
     @include flex(row, space-evenly, center);
     color: #fff;
 
-    .icon {
+    #icon {
       max-width: 55px;
     }
     p {
