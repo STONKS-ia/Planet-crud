@@ -17,9 +17,9 @@ body {
 }
 
 :root {
-  --colorBg: rgba(255, 255, 255, .1);
+  --colorBg: rgba(255, 255, 255, 0.1);
   --colorBorder: rgba(255, 255, 255, 0.2);
-  --colorBg1: #312C34;
+  --colorBg1: #312c34;
 }
 
 .container {
@@ -33,7 +33,7 @@ body {
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
-  overflow-y: auto;
+  overflow-y: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,6 +50,7 @@ body {
 }
 
 .container .item {
+  margin: 5px;
   border-radius: 10px;
   background: var(--colorBg1);
   width: 80%;
@@ -70,7 +71,7 @@ body {
   color: #fff;
 }
 
-.container .item #icon {
+.container .item .icon {
   max-width: 55px;
 }
 
