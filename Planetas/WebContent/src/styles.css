@@ -26,6 +26,7 @@ body {
   width: 850px;
   height: 70%;
   position: absolute;
+  padding: 20px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -33,6 +34,12 @@ body {
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
+}
+
+.listContainer {
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none;
   overflow-y: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,10 +56,11 @@ body {
           align-items: center;
 }
 
-.container .item {
+.listContainer .listItem {
   border-radius: 10px;
   background: var(--colorBg1);
   width: 80%;
+  margin-top: 15px;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,15 +78,15 @@ body {
   color: #fff;
 }
 
-.container .item #icon {
+.listContainer .listItem #icon {
   max-width: 55px;
 }
 
-.container .item p {
+.listContainer .listItem p {
   width: 70%;
 }
 
-.container .item button {
+.listContainer .listItem button {
   width: 35px;
   height: 35px;
   border-radius: 5px;
@@ -86,7 +94,7 @@ body {
   border: none;
 }
 
-.container .item button:first-of-type {
+.listContainer .listItem button:first-of-type {
   background: #161ffd;
   background-image: url(img/edit.svg);
   background-position: center;
@@ -94,7 +102,7 @@ body {
   background-size: 70%;
 }
 
-.container .item button:last-of-type {
+.listContainer .listItem button:last-of-type {
   background: #e11414;
   background-image: url(img/trash.svg);
   background-position: center;
