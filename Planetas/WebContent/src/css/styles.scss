@@ -14,67 +14,104 @@ body {
   overflow: none;
   background-size: cover;
 }
-
 :root {
-  --colorBg: rgba(255, 255, 255, .1);
+  --colorBg: rgba(255, 255, 255, 0.1);
   --colorBorder: rgba(255, 255, 255, 0.2);
-  --colorBg1: #312C34;
+  --colorBg1: #312c34;
 }
-
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
-
-.container {
+.listContainer {
   width: 850px;
   height: 70%;
   position: absolute;
+  padding: 0 20px;
+  overflow: auto;
   top: 50%;
   left: 50%;
+  scrollbar-width: none;
   transform: translate(-50%, -50%);
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
-  overflow-y: auto;
+  cursor: pointer;
+  position: relative;
+  scrollbar-width: none;
   @include flex(column, center, center);
-
-  .item {
-    border-radius: 10px;
-    background: var(--colorBg1);
-    width: 80%;
-    padding: 10px;
-    @include flex(row, space-evenly, center);
-    color: #fff;
-
-    #icon {
-      max-width: 55px;
-    }
-    p {
-      width: 70%;
-    }
-    button {
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      outline: none;
-      border: none;
-      &:first-of-type {
-        background: #161ffd;
-        background-image: url(img/edit.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 70%;
+}
+.active{
+  height: 200px;
+}
+.listItem {
+  width: 70%;
+  cursor: pointer;
+  background: var(--colorBg1);  
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  min-height: 70px;
+}
+.headItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--colorBg1);
+  width: 100%;
+  padding: 10px;
+  height: 70px;
+  border-bottom: 1px solid var(--colorBg); 
+  @include flex(row, space-evenly, center);
+  color: #fff;
+  z-index: 2000;
+  #icon {
+    max-width: 55px;
+  }
+  p {
+    width: 70%;
+  }
+  button {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    &:first-of-type {
+      background-color: #161ffd;
+      background-image: url(../img/edit.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      &:hover {
+        background-color: #3e44ec;
       }
-      &:last-of-type {
-        background: #e11414;
-        background-image: url(img/trash.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 55%;
-      }
     }
+    &:last-of-type {
+      &:hover {
+        background-color: #e93333;
+      }
+      background-color: #e11414;
+      background-image: url(../img/trash.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 55%;
+    }
+  }
+}
+.bodyItem{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  z-index: 1;
+  @include flex(column, center, center);
+  ul{
+    width: 60%;
+    margin: 10px;
   }
 }
