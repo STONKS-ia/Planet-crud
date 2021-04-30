@@ -4,25 +4,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   background: url(/src/img/bg.png) no-repeat center;
+  overflow: none;
   background-size: cover;
 }
 
 :root {
-  --colorBg: rgba(48, 43, 59, 80%);
+  --colorBg: rgba(255, 255, 255, .1);
   --colorBorder: rgba(255, 255, 255, 0.2);
+  --colorBg1: #312C34;
 }
 
-@mixin flex($direction) {
+@mixin flex($direction, $justify, $align) {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 .container {
@@ -35,11 +38,43 @@ body {
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
-  @include flex(column);
+  overflow-y: auto;
+  @include flex(column, center, center);
+
   .item {
-    border: 1px solid red;
+    border-radius: 10px;
+    background: var(--colorBg1);
     width: 80%;
-    height: 40px;
-    @include flex;
+    padding: 10px;
+    @include flex(row, space-evenly, center);
+    color: #fff;
+
+    #icon {
+      max-width: 55px;
+    }
+    p {
+      width: 70%;
+    }
+    button {
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      &:first-of-type {
+        background: #161ffd;
+        background-image: url(img/edit.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 70%;
+      }
+      &:last-of-type {
+        background: #e11414;
+        background-image: url(img/trash.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 55%;
+      }
+    }
   }
 }
