@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(/src/img/bg.png) no-repeat center;
+  background-size: cover;
+}
+
+:root {
+  --colorBg: rgba(48, 43, 59, 80%);
+  --colorBorder: rgba(255, 255, 255, 0.2);
+}
+
+@mixin flex($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+.container {
+  width: 850px;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--colorBorder);
+  border-radius: 50px;
+  background-color: var(--colorBg);
+  @include flex(column);
+  .item {
+    border: 1px solid red;
+    width: 80%;
+    height: 40px;
+    @include flex;
+  }
+}
