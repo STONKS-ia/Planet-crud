@@ -6,30 +6,30 @@ import java.util.List;
 
 public class Database {
 
-	private static List<Planetas> lista = new ArrayList<>();
+	private static List<Planeta> lista = new ArrayList<>();
 	private static int id = 1;
 
-	public static void adiciona(Planetas planetas) {
-		planetas.setId(id++);
-		lista.add(planetas);
+	public static void adiciona(Planeta planeta) {
+		planeta.setId(id++);
+		lista.add(planeta);
 	}
 
 	public static void remove(int id) {
-		Iterator<Planetas> it = lista.iterator();
+		Iterator<Planeta> it = lista.iterator();
 		while (it.hasNext()) {
-			Planetas planetas = it.next();
-			if (planetas.getId() == id) {
+			Planeta planeta = it.next();
+			if (planeta.getId() == id) {
 				it.remove();
 			}
 		}
 	}
 
-	public static List<Planetas> getPlanetas() {
+	public static List<Planeta> getPlanetas() {
 		return lista;
 	}
 
-	public static Planetas buscaPlanetasID(int id) {
-		for (Planetas planetas : lista) {
+	public static Planeta buscaPlanetasID(int id) {
+		for (Planeta planetas : lista) {
 			if (planetas.getId() == id) {
 				return planetas;
 			}

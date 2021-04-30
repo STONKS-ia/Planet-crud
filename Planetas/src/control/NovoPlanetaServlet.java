@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Database;
-import model.Planetas;
+import model.Planeta;
 
 @WebServlet("/novoUsuario")
 public class NovoPlanetaServlet extends HttpServlet {
@@ -25,7 +25,7 @@ public class NovoPlanetaServlet extends HttpServlet {
 		String velocidadeTranslacao = request.getParameter("velocidadeTransl");
 		String galaxia = request.getParameter("galaxia");
 
-		Planetas planeta = new Planetas(nomePlaneta, tamanhoPlaneta, tipoPlaneta, velocidadeRotacao, velocidadeTranslacao, galaxia);
+		Planeta planeta = new Planeta(nomePlaneta, tamanhoPlaneta, tipoPlaneta, velocidadeRotacao, velocidadeTranslacao, galaxia);
 		Database.adiciona(planeta);
 
 		request.setAttribute("planeta", planeta);

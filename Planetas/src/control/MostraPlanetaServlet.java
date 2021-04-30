@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Database;
-import model.Planetas;
+import model.Planeta;
 
 @WebServlet("/mostraUsuario")
 public class MostraPlanetaServlet extends HttpServlet {
@@ -21,8 +21,8 @@ public class MostraPlanetaServlet extends HttpServlet {
 
 		int id = Integer.parseInt(request.getParameter("id"));
 
-		Planetas planetas = Database.buscaPlanetasID(id);
-		request.setAttribute("usuario", planetas);
+		Planeta planetas = Database.buscaPlanetasID(id);
+		request.setAttribute("planeta", planetas);
 		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraUsuario.jsp");
 		rd.forward(request, response);
 

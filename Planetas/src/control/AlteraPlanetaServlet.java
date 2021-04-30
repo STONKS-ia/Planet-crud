@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Database;
-import model.Planetas;
+import model.Planeta;
 
 @WebServlet("/alteraUsuario")
 public class AlteraPlanetaServlet extends HttpServlet {
@@ -24,10 +24,8 @@ public class AlteraPlanetaServlet extends HttpServlet {
 		String velocidadeRotacao = request.getParameter("velocidadeRotacao");
 		String velocidadeTranslacao =request.getParameter("velocidadeTransl");
 		String galaxia = request.getParameter("galaxia");
-		
-		
-		
-		Planetas planetas = Database.buscaPlanetasID(id);
+				
+		Planeta planetas = Database.buscaPlanetasID(id);
 		
 		planetas.setNome(nomePlaneta);
 		planetas.setTamanho(tamanhoPlaneta);
