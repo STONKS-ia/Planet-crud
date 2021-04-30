@@ -22,24 +22,22 @@ body {
   --colorBg1: #312c34;
 }
 
-.container {
+.listContainer {
   width: 850px;
   height: 70%;
   position: absolute;
   padding: 0 20px;
+  overflow: auto;
   top: 50%;
   left: 50%;
+  scrollbar-width: none;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border: 1px solid var(--colorBorder);
   border-radius: 50px;
   background-color: var(--colorBg);
-}
-
-.listContainer {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  cursor: pointer;
+  position: relative;
   scrollbar-width: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,12 +54,29 @@ body {
           align-items: center;
 }
 
-.listContainer .listItem {
-  border-radius: 10px;
+.active {
+  height: 200px;
+}
+
+.listItem {
+  width: 70%;
+  cursor: pointer;
   background: var(--colorBg1);
-  width: 80%;
-  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  min-height: 70px;
+}
+
+.headItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--colorBg1);
+  width: 100%;
   padding: 10px;
+  height: 70px;
+  border-bottom: 1px solid var(--colorBg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,41 +91,74 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  z-index: 2000;
 }
 
-.listContainer .listItem:first-of-type {
-  margin-top: 55px;
-}
-
-.listContainer .listItem #icon {
+.headItem #icon {
   max-width: 55px;
 }
 
-.listContainer .listItem p {
+.headItem p {
   width: 70%;
 }
 
-.listContainer .listItem button {
+.headItem button {
   width: 35px;
   height: 35px;
   border-radius: 5px;
   outline: none;
+  cursor: pointer;
   border: none;
 }
 
-.listContainer .listItem button:first-of-type {
-  background: #161ffd;
-  background-image: url(img/edit.svg);
+.headItem button:first-of-type {
+  background-color: #161ffd;
+  background-image: url(../img/edit.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 70%;
 }
 
-.listContainer .listItem button:last-of-type {
-  background: #e11414;
-  background-image: url(img/trash.svg);
+.headItem button:first-of-type:hover {
+  background-color: #3e44ec;
+}
+
+.headItem button:last-of-type {
+  background-color: #e11414;
+  background-image: url(../img/trash.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 55%;
+}
+
+.headItem button:last-of-type:hover {
+  background-color: #e93333;
+}
+
+.bodyItem {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bodyItem ul {
+  width: 60%;
+  margin: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
