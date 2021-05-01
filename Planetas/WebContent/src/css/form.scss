@@ -38,19 +38,20 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid var(--colorBorder);
-  border-radius: 50px;
+  border-radius: 30px;
   background-color: var(--colorBg);
   color: white;
+  backdrop-filter: blur(10px);
 }
 
 input {
-  width: 310px;
+  width: 150px;
   height: 8%;
   border-style: none;
   border-bottom: 1px solid #fff;
   background-color: var(--colorBg);
   border-radius: 5px;
-  font-size: medium;
+  font-size: 10px;
   outline: none;
   color: white;
   padding-left: 10px;
@@ -62,9 +63,10 @@ input {
 legend {
   width: 100%;
   text-align: left;
-  font-size: 25px;
+  font-size: 13px;
   margin-bottom: 10px;
   padding-left: 10px;
+  padding-right: 15px;
 }
 
 button {
@@ -76,6 +78,6 @@ button {
   color: #fff;
   background-color: var(--colorBg1);
   border-style: none;
-  font-size: medium;
+  font-size: 10px;
   cursor: pointer;
 }

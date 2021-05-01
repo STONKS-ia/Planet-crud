@@ -20,6 +20,7 @@ body {
   --colorBg: rgba(255, 255, 255, 0.1);
   --colorBorder: rgba(255, 255, 255, 0.2);
   --colorBg1: #312c34;
+  --colorLink: #8b00ff;
 }
 
 .listContainer {
@@ -52,6 +53,22 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+#cadastro {
+  width: 70px;
+  height: 70px;
+  top: 75%;
+  left: 76%;
+  position: absolute;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url(/src/img/plus.svg);
+  background-color: var(--colorLink);
+  border-radius: 50%;
 }
 
 .active {
@@ -102,7 +119,8 @@ body {
   width: 70%;
 }
 
-.headItem button {
+.headItem button,
+.headItem a {
   width: 35px;
   height: 35px;
   border-radius: 5px;
@@ -111,7 +129,7 @@ body {
   border: none;
 }
 
-.headItem button:first-of-type {
+#edit {
   background-color: #161ffd;
   background-image: url(../img/edit.svg);
   background-position: center;
@@ -119,11 +137,11 @@ body {
   background-size: 70%;
 }
 
-.headItem button:first-of-type:hover {
+#edit:hover {
   background-color: #3e44ec;
 }
 
-.headItem button:last-of-type {
+#delete {
   background-color: #e11414;
   background-image: url(../img/trash.svg);
   background-position: center;
@@ -131,7 +149,7 @@ body {
   background-size: 55%;
 }
 
-.headItem button:last-of-type:hover {
+#delete:hover {
   background-color: #e93333;
 }
 

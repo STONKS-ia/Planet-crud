@@ -18,6 +18,7 @@ body {
   --colorBg: rgba(255, 255, 255, 0.1);
   --colorBorder: rgba(255, 255, 255, 0.2);
   --colorBg1: #312c34;
+  --colorLink: #8b00ff;
 }
 @mixin flex($direction, $justify, $align) {
   display: flex;
@@ -42,14 +43,28 @@ body {
   position: relative;
   scrollbar-width: none;
   @include flex(column, center, center);
+  backdrop-filter: blur(10px);
 }
-.active{
+#cadastro {
+  width: 70px;
+  height: 70px;
+  top: 75%;
+  left: 76%;
+  position: absolute;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url(/src/img/plus.svg);
+  background-color: var(--colorLink);
+  border-radius: 50%;
+}
+.active {
   height: 200px;
 }
 .listItem {
   width: 70%;
   cursor: pointer;
-  background: var(--colorBg1);  
+  background: var(--colorBg1);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -63,7 +78,7 @@ body {
   width: 100%;
   padding: 10px;
   height: 70px;
-  border-bottom: 1px solid var(--colorBg); 
+  border-bottom: 1px solid var(--colorBg);
   @include flex(row, space-evenly, center);
   color: #fff;
   z-index: 2000;
@@ -73,36 +88,37 @@ body {
   p {
     width: 70%;
   }
-  button {
+  button,
+  a {
     width: 35px;
     height: 35px;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
     border: none;
-    &:first-of-type {
-      background-color: #161ffd;
-      background-image: url(../img/edit.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 70%;
-      &:hover {
-        background-color: #3e44ec;
-      }
-    }
-    &:last-of-type {
-      &:hover {
-        background-color: #e93333;
-      }
-      background-color: #e11414;
-      background-image: url(../img/trash.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 55%;
-    }
   }
 }
-.bodyItem{
+#edit {
+  background-color: #161ffd;
+  background-image: url(../img/edit.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  &:hover {
+    background-color: #3e44ec;
+  }
+}
+#delete {
+  &:hover {
+    background-color: #e93333;
+  }
+  background-color: #e11414;
+  background-image: url(../img/trash.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 55%;
+}
+.bodyItem {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -110,7 +126,7 @@ body {
   width: 100%;
   z-index: 1;
   @include flex(column, center, center);
-  ul{
+  ul {
     width: 60%;
     margin: 10px;
   }
