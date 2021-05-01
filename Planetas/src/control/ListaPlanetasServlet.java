@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Database;
+import model.Planeta;
 
-@WebServlet("/listaUsuarios")
+@WebServlet("/listaPlanetas")
 public class ListaPlanetasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setAttribute("usuarios", Database.getPlanetas());
-		RequestDispatcher rd = request.getRequestDispatcher("/listaUsuarios.jsp");
+		request.setAttribute("planetas", Database.getPlanetas());
+		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);
 	}
 }

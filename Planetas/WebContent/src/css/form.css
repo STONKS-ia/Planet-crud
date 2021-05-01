@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/bg.png) no-repeat center;
+  overflow: none;
+  background-size: cover;
+}
+
+:root {
+  --colorBg: rgba(255, 255, 255, 0.1);
+  --colorBorder: rgba(255, 255, 255, 0.2);
+  --colorBg1: #312c34;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  height: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid var(--colorBorder);
+  border-radius: 30px;
+  background-color: var(--colorBg);
+  color: white;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+input {
+  width: 90%;
+  height: 8%;
+  border-style: none;
+  border-bottom: 1px solid #fff;
+  background-color: var(--colorBg);
+  border-radius: 5px;
+  font-size: 10px;
+  outline: none;
+  color: white;
+  padding-left: 10px;
+}
+
+input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+input:-ms-input-placeholder {
+  color: #fff;
+}
+
+input::-ms-input-placeholder {
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+legend {
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+button {
+  width: 40%;
+  height: 8%;
+  margin-top: 20px;
+  background-color: var(--colorBg1);
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--colorBg1);
+  border-style: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=form.css.map */
