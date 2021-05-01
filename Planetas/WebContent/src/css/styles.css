@@ -72,7 +72,7 @@ body {
 }
 
 .active {
-  height: 200px;
+  height: 250px;
 }
 
 .listItem {
@@ -128,7 +128,9 @@ body {
   cursor: pointer;
   border: none;
 }
-
+#name{
+  text-transform: capitalize;
+}
 #edit {
   background-color: #161ffd;
   background-image: url(../img/edit.svg);
