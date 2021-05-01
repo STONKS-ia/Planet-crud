@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Database;
 import model.Planeta;
 
-@WebServlet("/mostraUsuario")
+@WebServlet("/mostraPlaneta")
 public class MostraPlanetaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,7 @@ public class MostraPlanetaServlet extends HttpServlet {
 
 		Planeta planetas = Database.buscaPlanetasID(id);
 		request.setAttribute("planeta", planetas);
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraUsuario.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/update.jsp");
 		rd.forward(request, response);
 
 	}

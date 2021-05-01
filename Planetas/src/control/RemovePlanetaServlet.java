@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Database;
 
-@WebServlet("/removeUsuario")
+@WebServlet("/removePlaneta")
 public class RemovePlanetaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

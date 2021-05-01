@@ -11,7 +11,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: url(/src/img/bg.png) no-repeat center;
+  background: url(../img/bg.png) no-repeat center;
   overflow: none;
   background-size: cover;
 }
@@ -66,7 +66,7 @@ body {
   background-position: center;
   background-size: 40%;
   background-repeat: no-repeat;
-  background-image: url(/src/img/plus.svg);
+  background-image: url(../img/plus.svg);
   background-color: var(--colorLink);
   border-radius: 50%;
 }

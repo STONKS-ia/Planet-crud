@@ -12,6 +12,7 @@ public class Database {
 	public static void adiciona(Planeta planeta) {
 		planeta.setId(id++);
 		lista.add(planeta);
+		System.out.println("Passei aqui");		
 	}
 
 	public static void remove(int id) {
